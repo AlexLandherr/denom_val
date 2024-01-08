@@ -14,6 +14,11 @@ If the product of these four fractions is given in its lowest common terms, find
 */
 
 int main() {
+    /* func::frac t = {.numerator = 49, .denominator = 98};
+    std::cout << "Is " << t.numerator << "/" << t.denominator << " a curious fraction?: " << std::boolalpha << func::is_curious_fraq(t) << '\n';
+    func::reduce_frac(t);
+    std::cout << "Numerator: " << t.numerator << " Denominator: " << t.denominator << '\n'; */
+    std::cout << "The answer: " << func::get_answer() << '\n';
 
     return 0;
 }

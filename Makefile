@@ -4,7 +4,7 @@
 
 # Compiler settings - Can be customized.
 CC = g++
-CXXFLAGS = -std=c++20 -Wall -ggdb3
+CXXFLAGS = -std=c++20 -Wall
 LDFLAGS = 
 
 # Makefile settings - Can be customized.

@@ -4,18 +4,7 @@
 #include <vector>
 #include <numeric>
 #include <cstdint>
-
-/*
-The fraction 49/98 is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe
-that 49/98 = 4/8, which is correct, is obtained by cancelling the 9s.
-
-We shall consider fractions like, 30/50 = 3/5, to be trivial examples.
-
-There are exactly four non-trivial examples of this type of fraction, less than one in value,
-and containing two digits in the numerator and denominator.
-
-If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
-*/
+#include <cstdlib>
 
 namespace func {
     bool is_curious_fraq(func::frac f) {
@@ -51,7 +40,7 @@ namespace func {
 
     void reduce_frac(func::frac &f) {
         int64_t gcd_res = std::gcd(f.numerator, f.denominator);
-        int64_t temp_numerator = f.numerator / gcd_res;
+        int64_t temp_numerator = f.numerator / gcd_res; //Arithmetic exception.
         int64_t temp_denominator = f.denominator / gcd_res;
         f = {.numerator = temp_numerator, .denominator = temp_denominator};
     }
@@ -63,10 +52,12 @@ namespace func {
         for (int a = 11; a <= 98; a++) {
             if (a % 10 != 0) {
                 for (int b = 12; b <= 99; b++) {
-                    if (b % 10 != 0) {
-                        func::frac f = {.numerator = a, .denominator = b};
-                        if (is_curious_fraq(f)) {
-                            fracs.push_back(f);
+                    if (a < b) {
+                        if (b % 10 != 0) {
+                            func::frac f = {.numerator = a, .denominator = b};
+                            if (is_curious_fraq(f)) {
+                                fracs.push_back(f);
+                            }
                         }
                     }
                 }

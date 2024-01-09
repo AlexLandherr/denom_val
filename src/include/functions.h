@@ -11,7 +11,7 @@ namespace func {
 
     bool is_curious_fraq(func::frac f);
     void reduce_frac(func::frac &f);
-    int get_answer(); 
+    int64_t get_answer(); 
 }
 
 #endif

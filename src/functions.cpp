@@ -45,13 +45,13 @@ namespace func {
         f = {.numerator = temp_numerator, .denominator = temp_denominator};
     }
 
-    int get_answer() {
+    int64_t get_answer() {
         std::vector<func::frac> fracs;
 
         //Find the candidate fractions.
-        for (int a = 11; a <= 98; a++) {
+        for (int64_t a = 11; a <= 98; a++) {
             if (a % 10 != 0) {
-                for (int b = 12; b <= 99; b++) {
+                for (int64_t b = 12; b <= 99; b++) {
                     if (a < b) {
                         if (b % 10 != 0) {
                             func::frac f = {.numerator = a, .denominator = b};
